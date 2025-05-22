@@ -1,0 +1,32 @@
+.themeToggleButton {
+  padding: 12px;
+  border-radius: 14px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+:global(.light) .themeToggleButton {
+  background-color: #3b82f6; 
+  color: white;
+}
+
+:global(.light) .themeToggleButton:hover {
+  background-color: #1e40af; 
+}
+
+:global(.dark) .themeToggleButton {
+  background-color: #1e40af; 
+  color: white;
+}
+
+:global(.dark) .themeToggleButton:hover {
+  background-color: #3b82f6; 
+}
