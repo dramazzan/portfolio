@@ -1,0 +1,38 @@
+.navigationContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: colors 0.2s ease;
+}
+
+.navigationBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 16px;
+  justify-content: space-between;
+}
+
+.navigationTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+
+
+
+.navigationMenu {
+  display: flex;
+  gap: 24px;
+}
+
+.navigationLink {
+  transition: color 0.2s ease;
+}
+
+.navigationLink:hover {
+  color: #60a5fa; 
+}
