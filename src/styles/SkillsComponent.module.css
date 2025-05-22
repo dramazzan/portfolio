@@ -1,0 +1,128 @@
+.skills_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.skills_title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+:global(.dark) .skills_title {
+  color: #f3f4f6;
+}
+
+.skills_container .skill_items {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.skill_items .skill_item {
+  background: #f9fafb;
+  color: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill_items .skill_item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+:global(.dark) .skill_item {
+  background: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #374151;
+}
+
+.skill_item .skill_name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.skill_item .skill_category {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+:global(.dark) .skill_category {
+  color: #9ca3af;
+}
+
+.skill_item .skill_level {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill_item .skill_level_out {
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: none;
+}
+
+:global(.dark) .skill_item .skill_level_out {
+  background: #374151;
+}
+
+
+.skill_level_out .basic {
+  height: 100%;
+  width: 33%;
+  background: #60a5fa; 
+  border-radius: 9999px;
+}
+
+.skill_level_out .medium {
+  height: 100%;
+  width: 66%;
+  background: #3b82f6;
+  border-radius: 9999px;
+}
+
+.skill_level_out .advanced {
+  height: 100%;
+  width: 90%;
+  background: #2563eb; 
+  border-radius: 9999px;
+}
+
+.skill_level_box{
+    font-size: 0.8rem;
+    color: #4b5563;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+:global(.dark) .skill_level_title {
+  color: #d1d5db;
+}
+
+:global(.dark) .skill_level_percent {
+  color: #d1d5db;
+}
