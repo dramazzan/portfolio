@@ -1,0 +1,257 @@
+.git_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+}
+
+.git_title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.carousel_wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel_container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.git_items {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  cursor: grab;
+  user-select: none;
+}
+
+.git_items:active {
+  cursor: grabbing;
+}
+
+.git_item {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+:global(.dark) .git_item {
+  background: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #374151;
+}
+
+.git_item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.repo_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:global(.dark) .repo_name {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.repo_icon_name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.repo_icon_name span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.repo_name a {
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+
+.repo_name a:hover {
+  transform: scale(1.2);
+}
+
+.repo_lang {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1rem;
+}
+
+.repo_lang span {
+  font-weight: 500;
+}
+
+/* Кнопки навигации */
+.carousel_nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 0;
+}
+
+.carousel_wrapper:hover .carousel_nav {
+  opacity: 1;
+}
+
+.carousel_nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel_nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel_nav.prev {
+  left: 10px;
+}
+
+.carousel_nav.next {
+  right: 10px;
+}
+
+/* Индикаторы прогресса */
+.carousel_indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.indicator.active {
+  background: #667eea;
+  transform: scale(1.2);
+}
+
+:global(.dark) .indicator {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+:global(.dark) .indicator:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+:global(.dark) .indicator.active {
+  background: #667eea;
+}
+
+:global(.dark) .carousel_nav {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+:global(.dark) .carousel_nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Медиа запросы */
+@media (max-width: 768px) {
+  .git_container {
+    padding: 15px;
+  }
+  
+  .git_title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .git_item {
+    padding: 20px;
+  }
+  
+  .repo_icon_name span {
+    font-size: 1rem;
+  }
+  
+  .carousel_nav {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel_nav.prev {
+    left: 5px;
+  }
+  
+  .carousel_nav.next {
+    right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .git_item {
+    padding: 15px;
+  }
+  
+  .git_title {
+    font-size: 1.5rem;
+  }
+  
+  .carousel_nav {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .repo_icon_name span {
+    font-size: 0.9rem;
+  }
+  
+  .repo_lang {
+    font-size: 0.9rem;
+  }
+}
