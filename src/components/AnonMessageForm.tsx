@@ -8,7 +8,6 @@ export default function AnonMessageForm() {
   const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Автоматически скрывать статус через 5 секунд
   useEffect(() => {
     if (status && !isLoading) {
       const timer = setTimeout(() => {

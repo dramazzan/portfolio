@@ -38,7 +38,6 @@ const GitReposComponent = () => {
     fetchRepos();
   }, []);
 
-  // Определяем количество элементов на экране в зависимости от размера
   useEffect(() => {
     const updateItemsPerView = () => {
       if (window.innerWidth <= 480) {
@@ -55,7 +54,6 @@ const GitReposComponent = () => {
     return () => window.removeEventListener('resize', updateItemsPerView);
   }, []);
 
-  // Автопроигрывание
   useEffect(() => {
     if (!isAutoPlaying || repos.length === 0) return;
 
@@ -96,31 +94,19 @@ const GitReposComponent = () => {
 
   const nextSlide = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prev) => {
-      const maxIndex = Math.max(0, repos.length - itemsPerView);
-      return prev >= maxIndex ? 0 : prev + 1;
-    });
-    
-    // Возобновляем автоплей через 5 секунд
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
   const prevSlide = () => {
     setIsAutoPlaying(false);
-    setCurrentIndex((prev) => {
-      const maxIndex = Math.max(0, repos.length - itemsPerView);
-      return prev <= 0 ? maxIndex : prev - 1;
-    });
-    
-    // Возобновляем автоплей через 5 секунд
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
   const goToSlide = (index: number) => {
     setIsAutoPlaying(false);
     setCurrentIndex(index);
-    
-    // Возобновляем автоплей через 5 секунд
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
@@ -134,6 +120,7 @@ const GitReposComponent = () => {
 
   const maxIndex = Math.max(0, repos.length - itemsPerView);
   const translateX = currentIndex * (100 / itemsPerView);
+  const totalPages = Math.ceil(repos.length / itemsPerView);
 
   return (
     <div className={styles.git_container}>
@@ -201,14 +188,15 @@ const GitReposComponent = () => {
 
       {repos.length > itemsPerView && (
         <div className={styles.carousel_indicators}>
-          {Array.from({ length: maxIndex + 1 }, (_, index) => (
-            <button
-              key={index}
-              className={`${styles.indicator} ${currentIndex === index ? styles.active : ''}`}
-              onClick={() => goToSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+          {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                  key={index}
+                  className={`${styles.indicator} ${currentIndex === index ? styles.active : ''}`}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+              />
           ))}
+
         </div>
       )}
     </div>
