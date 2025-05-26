@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import styles from '@/styles/feedback/FeedbackList.module.css';
+import {User} from "lucide-react"
 
 type Feedback = {
     _id: string;
@@ -128,7 +129,7 @@ export default function FeedbackList({ newFeedback }: Props) {
                     >
                         <header className={styles.feedbackHeader}>
                             <h4 className={styles.authorName}>
-                                <span className={styles.authorIcon} aria-hidden="true">👤</span>
+                                <span className={styles.authorIcon} aria-hidden="true"><User size={20}/></span>
                                 {feedback.name}
                             </h4>
                             <time
