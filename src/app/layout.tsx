@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import {Providers} from "./providers"
 import {Roboto} from "next/font/google"
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Providers>
         <Navigation/> 
         {children}
+          <Footer/>
         </Providers>
         </body>
     </html>
