@@ -4,18 +4,21 @@
   margin: 0 auto;
   padding: 10px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .git_title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: clamp(20px, 5vw, 40px);
+  line-height: 1.2;
 }
 
 .carousel_wrapper {
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .carousel_container {
@@ -25,7 +28,7 @@
 
 .git_items {
   display: flex;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
   padding: 10px;
   cursor: grab;
   user-select: none;
@@ -37,17 +40,18 @@
 
 .git_item {
   background: #fff;
-  border-radius: 15px;
-  padding: 25px;
+  border-radius: clamp(10px, 2vw, 15px);
+  padding: clamp(15px, 3vw, 25px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex-shrink: 0;
   border: 1px solid #e5e7eb;
   color: #111827;
-  min-height: 150px;
+  min-height: clamp(120px, 20vw, 150px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 :global(.dark) .git_item {
@@ -57,17 +61,18 @@
 }
 
 .git_item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .repo_name {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
+  align-items: flex-start;
+  margin-bottom: clamp(15px, 3vw, 20px);
+  padding-bottom: clamp(10px, 2vw, 15px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  gap: 10px;
 }
 
 :global(.dark) .repo_name {
@@ -77,14 +82,18 @@
 .repo_icon_name {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: clamp(8px, 2vw, 15px);
+  flex: 1;
+  min-width: 0;
 }
 
 .repo_icon_name span {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   font-weight: 600;
   line-height: 1.3;
   word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .repo_name a {
@@ -93,17 +102,19 @@
   display: flex;
   align-items: center;
   color: inherit;
+  flex-shrink: 0;
 }
 
 .repo_name a:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .repo_lang {
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 1rem;
+  gap: clamp(8px, 2vw, 15px);
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  flex-wrap: wrap;
 }
 
 .repo_lang span {
@@ -119,8 +130,8 @@
   color: white;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: clamp(35px, 8vw, 50px);
+  height: clamp(35px, 8vw, 50px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,7 +147,7 @@
 
 .carousel_nav:hover {
   background: rgba(0, 0, 0, 0.8);
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.05);
 }
 
 .carousel_nav:active {
@@ -144,24 +155,25 @@
 }
 
 .carousel_nav.prev {
-  left: 10px;
+  left: clamp(5px, 2vw, 10px);
 }
 
 .carousel_nav.next {
-  right: 10px;
+  right: clamp(5px, 2vw, 10px);
 }
 
 /* Индикаторы прогресса */
 .carousel_indicators {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
+  gap: clamp(5px, 1.5vw, 10px);
+  margin-top: clamp(20px, 4vw, 30px);
+  flex-wrap: wrap;
 }
 
 .indicator {
-  width: 12px;
-  height: 12px;
+  width: clamp(8px, 2vw, 12px);
+  height: clamp(8px, 2vw, 12px);
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.3);
   border: none;
@@ -200,58 +212,247 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* Медиа запросы */
-@media (max-width: 768px) {
+/* Стили для отключенных кнопок */
+.carousel_nav.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.carousel_nav.disabled:hover {
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+:global(.dark) .carousel_nav.disabled:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Стили для загрузки */
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+:global(.dark) .loading {
+  color: #ccc;
+}
+
+/* Стили для описания репозитория */
+.repo_description {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:global(.dark) .repo_description {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.repo_description p {
+  font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+:global(.dark) .repo_description p {
+  color: #ccc;
+}
+
+/* Медиа запросы для планшетов */
+@media (max-width: 1024px) {
   .git_container {
     padding: 15px;
   }
-  
-  .git_title {
-    font-size: 2rem;
-    margin-bottom: 30px;
+
+  .git_items {
+    gap: 15px;
   }
-  
+
   .git_item {
-    padding: 20px;
-  }
-  
-  .repo_icon_name span {
-    font-size: 1rem;
-  }
-  
-  .carousel_nav {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .carousel_nav.prev {
-    left: 5px;
-  }
-  
-  .carousel_nav.next {
-    right: 5px;
+    min-height: 140px;
   }
 }
 
-@media (max-width: 480px) {
-  .git_item {
-    padding: 15px;
+/* Медиа запросы для мобильных устройств */
+@media (max-width: 768px) {
+  .git_container {
+    padding: 12px;
   }
-  
+
   .git_title {
-    font-size: 1.5rem;
+    margin-bottom: 25px;
   }
-  
-  .carousel_nav {
-    width: 35px;
-    height: 35px;
+
+  .git_items {
+    gap: 12px;
+    padding: 8px;
   }
-  
-  .repo_icon_name span {
-    font-size: 0.9rem;
+
+  .git_item {
+    min-height: 130px;
+    padding: 18px;
   }
-  
+
+  .repo_name {
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    align-items: center;
+  }
+
+  .repo_icon_name {
+    gap: 10px;
+  }
+
   .repo_lang {
-    font-size: 0.9rem;
+    gap: 10px;
+  }
+
+  .carousel_nav {
+    opacity: 0.7;
+  }
+
+  .carousel_nav.prev {
+    left: 8px;
+  }
+
+  .carousel_nav.next {
+    right: 8px;
+  }
+
+  .carousel_indicators {
+    margin-top: 25px;
+    gap: 8px;
+  }
+}
+
+/* Медиа запросы для маленьких мобильных устройств */
+@media (max-width: 480px) {
+  .git_container {
+    padding: 8px;
+  }
+
+  .git_title {
+    margin-bottom: 20px;
+  }
+
+  .git_items {
+    gap: 8px;
+    padding: 5px;
+  }
+
+  .git_item {
+    min-height: 110px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .repo_name {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .repo_icon_name {
+    gap: 8px;
+    width: 100%;
+  }
+
+  .repo_name > div:last-child {
+    align-self: flex-end;
+  }
+
+  .repo_lang {
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .carousel_nav {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .carousel_nav.prev {
+    left: 5px;
+  }
+
+  .carousel_nav.next {
+    right: 5px;
+  }
+
+  .carousel_indicators {
+    margin-top: 20px;
+    gap: 6px;
+  }
+
+  .indicator {
+    min-width: 8px;
+    min-height: 8px;
+  }
+}
+
+/* Медиа запросы для очень маленьких экранов */
+@media (max-width: 360px) {
+  .git_container {
+    padding: 5px;
+  }
+
+  .git_item {
+    padding: 10px;
+    min-height: 100px;
+  }
+
+  .repo_name {
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+  }
+
+  .repo_icon_name span {
+    font-size: 0.85rem;
+  }
+
+  .repo_lang {
+    font-size: 0.8rem;
+  }
+
+  .carousel_nav {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carousel_nav svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Улучшения для touch устройств */
+@media (hover: none) and (pointer: coarse) {
+  .carousel_nav {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .git_item:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  }
+
+  .git_item:active {
+    transform: scale(0.98);
+  }
+
+  .carousel_nav:hover {
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .carousel_nav:active {
+    transform: translateY(-50%) scale(0.9);
   }
 }

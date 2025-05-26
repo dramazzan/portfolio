@@ -1,42 +1,108 @@
 .feedbackSection {
-    width: 1200px;
-    display:flex;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px auto;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-
-.feedbackSection .sectionTitle{
-    font-size: 3rem;
+.feedbackSection .sectionTitle {
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
-
-.feedbackHeader{
+.feedbackHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     gap: 20px;
-
 }
-.feedbackHeader .feedbackDescription{
+
+.feedbackHeader .feedbackDescription {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     padding: 20px 0;
-    justify-content: start;
+    justify-content: flex-start;
     height: 100%;
     gap: 20px;
-
+    flex: 1;
 }
 
-.feedbackHeader .feedbackDescription h2{
-    font-size: 3rem;
+.feedbackHeader .feedbackDescription h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 600;
+    line-height: 1.2;
 }
 
-.feedbackHeader .feedbackDescription p{
-    font-size: 1.5rem;
+.feedbackHeader .feedbackDescription p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    line-height: 1.4;
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .feedbackSection {
+        max-width: 100%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .feedbackHeader {
+        gap: 15px;
+    }
+
+    .feedbackHeader .feedbackDescription {
+        padding: 15px 0;
+        gap: 15px;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    .feedbackSection {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .feedbackHeader {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .feedbackHeader .feedbackDescription {
+        text-align: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .feedbackHeader .feedbackDescription h2 {
+        text-align: center;
+    }
+
+    .feedbackHeader .feedbackDescription p {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    .feedbackSection {
+        padding: 8px;
+        margin: 8px auto;
+    }
+
+    .feedbackHeader {
+        gap: 15px;
+    }
+
+    .feedbackHeader .feedbackDescription {
+        gap: 10px;
+        padding: 8px 0;
+    }
 }
