@@ -13,7 +13,7 @@ const Navigation = () => {
             <Link href="/" className={styles.navigationLink}>Home</Link>
           </li>
           <li>
-            <Link href="/about" className={styles.navigationLink}>About</Link>
+            <Link href="#about" className={styles.navigationLink}>About</Link>
           </li>
         </ul>
 

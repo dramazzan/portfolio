@@ -7,11 +7,12 @@
     justify-content: center;
     align-items: center;
     padding: 40px 0;
+
 }
 
 .header {
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,11 +79,11 @@
 
 .content {
     width: 100%;
-    max-width: 800px;
+    max-width: 1180px;
     background: #f9fafb;
     color: #111827;
-    padding: 32px;
     border-radius: 12px;
+    padding: 16px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
