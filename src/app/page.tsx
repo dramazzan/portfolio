@@ -7,8 +7,8 @@ import AboutMeComponent from "@/components/AboutMeComponent";
 
 export default function Home() {
     return (
-        <div>
-            <section className="flex items-center justify-center">
+        <div className="bg-background-light dark:bg-background-dark">
+            <section>
                 <div>
                     <VantaHero effect="halo"/>
                 </div>

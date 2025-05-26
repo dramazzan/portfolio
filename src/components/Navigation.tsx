@@ -4,7 +4,7 @@ import styles from '@/styles/Navigation.module.css'
 
 const Navigation = () => {
   return (
-    <div className={`bg-background ${styles.navigationContainer}`}>
+    <div className={`bg-background p-2 ${styles.navigationContainer}`}>
       <nav className={`bg-background ${styles.navigationBar}`}>
         <h1 className={styles.navigationTitle}>Portfolio</h1>
 

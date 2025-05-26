@@ -4,9 +4,39 @@
     flex-direction: column;
     align-items: center;
     margin: 20px auto;
+    padding: 20px;
 }
 
 
 .feedbackSection .sectionTitle{
     font-size: 3rem;
+}
+
+
+.feedbackHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+
+}
+.feedbackHeader .feedbackDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px 0;
+    justify-content: start;
+    height: 100%;
+    gap: 20px;
+
+}
+
+.feedbackHeader .feedbackDescription h2{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.feedbackHeader .feedbackDescription p{
+    font-size: 1.5rem;
 }

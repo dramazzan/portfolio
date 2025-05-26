@@ -1,9 +1,6 @@
 .vanta_hero_section {
     width: 100%;
-    max-width: 1200px;
-    height: 60vh;
-    border-radius: 10px;
-    margin: 10px auto;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
