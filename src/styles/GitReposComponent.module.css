@@ -39,6 +39,7 @@
 }
 
 .git_item {
+  box-sizing: border-box;
   background: #fff;
   border-radius: clamp(10px, 2vw, 15px);
   padding: clamp(15px, 3vw, 25px);
@@ -67,12 +68,12 @@
 
 .repo_name {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: start;
   margin-bottom: clamp(15px, 3vw, 20px);
   padding-bottom: clamp(10px, 2vw, 15px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   gap: 10px;
+
 }
 
 :global(.dark) .repo_name {

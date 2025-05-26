@@ -193,12 +193,14 @@ const GitReposComponent = (): JSX.Element => {
                     <div className={styles.repo_name}>
                       <div className={styles.repo_icon_name}>
                         <span>{repo.name}</span>
+                        <div>
+                          <Link href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                            <SquareArrowOutUpRight
+                                size={typeof window !== "undefined" && window.innerWidth <= 480 ? 16 : 20}/>
+                          </Link>
+                        </div>
                       </div>
-                      <div>
-                        <Link href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                          <SquareArrowOutUpRight size={typeof window !== "undefined" && window.innerWidth <= 480 ? 16 : 20} />
-                        </Link>
-                      </div>
+
                     </div>
                     <div className={styles.repo_lang}>
                       <span>Language:</span>
