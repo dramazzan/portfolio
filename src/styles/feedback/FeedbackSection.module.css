@@ -1,0 +1,12 @@
+.feedbackSection {
+    width: 1200px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+}
+
+
+.feedbackSection .sectionTitle{
+    font-size: 3rem;
+}
