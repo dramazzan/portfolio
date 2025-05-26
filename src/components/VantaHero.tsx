@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+// @ts-ignore
 import HALO from 'vanta/dist/vanta.halo.min';
 import styles from '@/styles/VantaHero.module.css'; // импорт CSS
 
