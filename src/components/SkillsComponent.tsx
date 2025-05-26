@@ -33,7 +33,7 @@ const SkillsComponent = () => {
   };
 
   return (
-    <div className={styles.skills_container}>
+    <div id="skills" className={styles.skills_container}>
       <h1 className={styles.skills_title}>My Skills</h1>
       <div className={styles.skill_items}>
         {skills.map((skill) => (

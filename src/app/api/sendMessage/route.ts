@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(req: NextRequest) {
-   console.log('POST request received'); 
   console.log(process.env.MY_EMAIL)
   const body = await req.json();
   const { message } = body;

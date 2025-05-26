@@ -1,0 +1,68 @@
+.vanta_hero_section {
+    width: 100%;
+    max-width: 1200px;
+    height: 60vh;
+    border-radius: 10px;
+    margin: 10px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+   
+}
+  
+  .vanta_content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    max-width: 1200px;
+  }
+  
+  .vanta_title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .vanta_description {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+  
+  .vanta_button {
+    display: inline-block;
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .vanta_button:hover {
+    background-color: #2563eb; /* blue-600 */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .vanta_title {
+      font-size: 2.5rem;
+    }
+  
+    .vanta_description {
+      font-size: 1.2rem;
+    }
+  
+    .vanta_content {
+      padding: 1rem;
+    }
+  }
+  

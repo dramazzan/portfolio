@@ -1,3 +1,5 @@
+
+
 .navigationContainer {
   display: flex;
   width: 100%;
@@ -12,9 +14,23 @@
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  padding: 16px;
   justify-content: space-between;
 }
+
+.navigationBar ul{
+  list-style: none;
+}
+
+.navigationBar a{
+  text-decoration: none;
+  color: #000;
+}
+
+:global(.dark) .navigationBar a{
+  color: #fff;
+}
+
+
 
 .navigationTitle {
   font-size: 1.5rem;

@@ -145,6 +145,7 @@
   transition: all 0.3s ease;
   background: white;
   color: #111827;
+  box-sizing: border-box;
 }
 
 .anon_textarea:focus {

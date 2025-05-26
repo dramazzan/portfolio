@@ -3,11 +3,12 @@ import GitReposComponent from "@/components/GitReposComponent";
 import AnonMessageForm from "@/components/AnonMessageForm";
 import VantaHero from "@/components/VantaHero";
 import React from "react";
+import FeedbackSection from "@/components/feedbackComponents/FeedbackSection";
 
 export default function Home() {
     return (
         <div>
-            <section>
+            <section className="flex items-center justify-center">
                 <div>
                     <VantaHero effect="halo"/>
                 </div>
@@ -20,6 +21,9 @@ export default function Home() {
             </section>
             <section>
                 <GitReposComponent/>
+            </section>
+            <section>
+                <FeedbackSection/>
             </section>
         </div>
     );
