@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import {Providers} from "./providers"
-import {Roboto} from "next/font/google"
+import {Roboto , Poppins} from "next/font/google"
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -16,6 +16,12 @@ const roboto = Roboto({
   display: 'swap'
 })
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400' ,'700'],
+  display: 'swap'
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html  lang="en" suppressHydrationWarning>
-      <body className={roboto.className}>
+      <body className={poppins.className}>
         <Providers>
         <Navigation/> 
         {children}
