@@ -2,8 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import {Providers} from "./providers"
-import {Roboto , Poppins} from "next/font/google"
+import {Roboto , Poppins , Nunito_Sans} from "next/font/google"
 import Footer from "@/components/Footer";
+import {subscribe} from "node:diagnostics_channel";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -22,6 +23,13 @@ const poppins = Poppins({
   display: 'swap'
 })
 
+const nunito_sans = Nunito_Sans({
+      subsets:["latin"],
+      weight: ['400' ,'700'],
+      display: 'swap'
+}
+)
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html  lang="en" suppressHydrationWarning>
-      <body className={poppins.className}>
+      <body className={nunito_sans.className}>
         <Providers>
         <Navigation/> 
         {children}
