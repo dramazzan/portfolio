@@ -12,6 +12,7 @@ import {
   JavaOriginal,
   Html5Original,
   GoOriginal,
+  SwiftOriginal,
   Css3Original,
 } from "devicons-react";
 import { Ban, SquareArrowOutUpRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -102,6 +103,8 @@ const GitReposComponent = (): JSX.Element => {
         return <VuejsOriginal size={iconSize} />;
       case "go":
         return <GoOriginal size={iconSize} />;
+      case "swift":
+        return <SwiftOriginal size={iconSize} />;
       default:
         return <Ban size={iconSize} />;
     }
