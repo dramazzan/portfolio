@@ -9,7 +9,6 @@ const BurgerMenu = () => {
 
     return (
         <>
-            {/* Backdrop */}
             <div
                 className={`fixed inset-0 bg-black/20 backdrop-blur-sm transition-all duration-300 z-10 ${
                     isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
@@ -17,7 +16,6 @@ const BurgerMenu = () => {
                 onClick={() => setIsOpen(false)}
             />
 
-            {/* Burger Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`fixed flex items-center justify-center p-3 z-30 
@@ -25,26 +23,25 @@ const BurgerMenu = () => {
                     rounded-full bg-gradient-to-r from-amber-400 to-orange-500 
                     shadow-lg hover:shadow-xl hover:scale-110 
                     transition-all duration-300 ease-in-out
-                    ${isOpen ? 'rotate-180 bg-gradient-to-r from-red-400 to-pink-500' : ''}
+                    ${isOpen ? 'rotate-360 bg-gradient-to-r from-red-400 to-pink-500' : ''}
                 `}
             >
                 <div className="relative">
                     <Flame
                         size={32}
                         className={`absolute text-white transition-all duration-300 ${
-                            isOpen ? 'opacity-100 rotate-0' : 'opacity-0 rotate-180'
+                            isOpen ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'
                         }`}
                     />
                     <FlameKindling
                         size={32}
                         className={`text-white transition-all duration-300 ${
-                            isOpen ? 'opacity-0 -rotate-180' : 'opacity-100 rotate-0'
+                            isOpen ? 'opacity-100 -rotate-0' : 'opacity-0 rotate-180'
                         }`}
                     />
                 </div>
             </button>
 
-            {/* Menu Content */}
             <div
                 className={`fixed bottom-6 left-6 sm:bottom-10 sm:left-10 md:bottom-14 md:left-14
                     w-64 sm:w-72 md:w-80 lg:w-96 p-4 sm:p-6 rounded-2xl 
@@ -58,7 +55,6 @@ const BurgerMenu = () => {
                 `}
             >
                 <div className="relative">
-                    {/* Decorative gradient background */}
                     <div className="absolute inset-0 bg-gradient-to-br bg-background-light dark:bg-background-dark p-1 rounded-xl -z-10" />
 
                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-gray-800 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
@@ -100,7 +96,6 @@ const BurgerMenu = () => {
                         </li>
                     </ul>
 
-                    {/* Decorative elements */}
                     <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full opacity-60 animate-pulse" />
                     <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-gradient-to-br from-pink-400 to-red-500 rounded-full opacity-40 animate-pulse delay-700" />
                 </div>
