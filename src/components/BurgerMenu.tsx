@@ -20,7 +20,8 @@ const BurgerMenu = () => {
             {/* Burger Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`fixed flex items-center justify-center p-3 z-30 bottom-10 left-10 
+                className={`fixed flex items-center justify-center p-3 z-30 
+                    bottom-6 left-6 sm:bottom-10 sm:left-10 md:bottom-14 md:left-14 
                     rounded-full bg-gradient-to-r from-amber-400 to-orange-500 
                     shadow-lg hover:shadow-xl hover:scale-110 
                     transition-all duration-300 ease-in-out
@@ -45,21 +46,22 @@ const BurgerMenu = () => {
 
             {/* Menu Content */}
             <div
-                className={`fixed bottom-10 left-10 w-72 p-6 rounded-2xl 
+                className={`fixed bottom-6 left-6 sm:bottom-10 sm:left-10 md:bottom-14 md:left-14
+                    w-64 sm:w-72 md:w-80 lg:w-96 p-4 sm:p-6 rounded-2xl 
                     bg-background-light dark:bg-background-dark backdrop-blur-md border text-black dark:text-white border-white/20
                     shadow-2xl z-20
                     transition-all duration-500 ease-out
                     ${isOpen
-                    ? "translate-y-0 opacity-100 translate-x-20 visible scale-100"
+                    ? "translate-y-0 opacity-100 translate-x-10 sm:translate-x-20 visible scale-100"
                     : "translate-y-8 opacity-0 translate-x-0 invisible scale-95"
                 }
                 `}
             >
                 <div className="relative">
                     {/* Decorative gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br  bg-background-light dark:bg-background-dark p-1 rounded-xl -z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-br bg-background-light dark:bg-background-dark p-1 rounded-xl -z-10" />
 
-                    <h2 className="text-2xl font-bold mb-6 text-gray-800 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-gray-800 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
                         Connect with me
                     </h2>
 
@@ -71,7 +73,7 @@ const BurgerMenu = () => {
                                     style={{ height: 40, width: 40 }}
                                     className="hover:scale-110 transition-transform duration-200"
                                 />
-                                <span className=" font-medium">GitHub</span>
+                                <span className="font-medium">GitHub</span>
                             </div>
                         </li>
 
@@ -82,7 +84,7 @@ const BurgerMenu = () => {
                                     style={{ height: 40, width: 40 }}
                                     className="hover:scale-110 transition-transform duration-200"
                                 />
-                                <span className=" font-medium">LinkedIn</span>
+                                <span className="font-medium">LinkedIn</span>
                             </div>
                         </li>
 
@@ -93,7 +95,7 @@ const BurgerMenu = () => {
                                     style={{ height: 40, width: 40 }}
                                     className="hover:scale-110 transition-transform duration-200"
                                 />
-                                <span className=" font-medium">Telegram</span>
+                                <span className="font-medium">Telegram</span>
                             </div>
                         </li>
                     </ul>
