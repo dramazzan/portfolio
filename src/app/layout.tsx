@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import {Providers} from "./providers"
 import {Roboto , Poppins , Nunito_Sans} from "next/font/google"
 import Footer from "@/components/Footer";
-import {subscribe} from "node:diagnostics_channel";
+import BurgerMenu from "@/components/BurgerMenu";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -39,6 +39,7 @@ export default function RootLayout({
     <html  lang="en" suppressHydrationWarning>
       <body className={nunito_sans.className}>
         <Providers>
+          <BurgerMenu/>
         <Navigation/> 
         {children}
           <Footer/>
