@@ -17,13 +17,22 @@ export default function Home() {
             <section>
                 <AboutMeComponent/>
             </section>
-            <section className="flex items-center justify-around w-[1200px] m-auto">
-                <div className="flex w-[40%] items-start flex-col gap-4  p-4 rounded-2xl">
-                    <h2 className="font-bold text-5xl w-fulltext-gray-800 dark:text-gray-300 border-b p-2">My education</h2>
-                    <p className="text-2xl text-gray-500">I am a student at Narxoz University, I have completed my 3rd year. My specialty is digital engineering. I studied different areas of programming and different programming languages ​​under the university program. I would like to start with front-end development.</p>
+            <section className="flex flex-wrap items-center justify-center gap-8 w-full max-w-[1200px] mx-auto p-4">
+                <div className="flex flex-col items-start gap-4 p-4 rounded-2xl w-full md:w-[45%]">
+                    <h2 className="font-bold text-3xl md:text-5xl w-full text-gray-800 dark:text-gray-300 border-b p-2">
+                        My education
+                    </h2>
+                    <p className="text-lg md:text-2xl text-gray-500">
+                        I am a student at Narxoz University, I have completed my 3rd year. My specialty is digital
+                        engineering. I studied different areas of programming and different programming languages
+                        ​​under the university program. I would like to start with front-end development.
+                    </p>
                 </div>
-                <AnimatedInvertCircle text="NARXOZ"/>
+                <div className="w-full md:w-[45%]">
+                    <AnimatedInvertCircle text="NARXOZ"/>
+                </div>
             </section>
+
             <section>
                 <SkillsComponent/>
             </section>
