@@ -94,6 +94,17 @@ const BurgerMenu = () => {
                                 <span className="font-medium">Telegram</span>
                             </div>
                         </li>
+                        <li className="transform transition-all duration-300 hover:translate-x-2 delay-150">
+                            <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/50 transition-colors duration-200">
+                                <SocialIcon
+                                url="mailto:ramazandautbek04@gmail.com"
+                                style={{ height: 40, width: 40 }}
+                                className="hover:scale-110 transition-transform duration-200"
+                                />
+                                <span className="font-medium">Email</span>
+                            </div>
+                            </li>
+
                     </ul>
 
                     <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full opacity-60 animate-pulse" />
